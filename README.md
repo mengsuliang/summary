@@ -1,4 +1,6 @@
-## Git学习小结
+## Git学习
+@author : Meng Suliang
+@date : 03/01/2020
 ### 1.简介
 ###### Git 是目前世界上最先进的分布式版本控制系统，它为开源项目免费提供 Git存储
 ### 2.环境搭建
@@ -76,5 +78,93 @@ $ git commit -m "commit message"
 >```git rm < file >```从版本库中删除该文件。
 
 ### 4.远程仓库
+**4.1. 生成 SSH key**
+```
+第 1 步：创建 SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，在Windows 下打开 Git Bash，创建 SSH Key：
+$ ssh-keygen -t rsa -C "youremail@example.com"
+
+第 2 步：登陆 GitHub，打开“Account settings”，“SSH Keys”页面。接着点“Add SSH Key”，填上任意 Title，在 Key 文本框里粘贴id_rsa.pub文件的内容点“Add Key”，可以看到已经添加的 Key。
+```
+**4.2. 添加远程库**
+>1.Create a new repo，创建一个新的仓库；
+
+>2.$ git remote add origin git@github.com:michaelliao/learngit.git
+
+>3.$ git push -u origin master 把本地库的所有内容推送到远程库上(第一次推送)
+
+>注：把本地库的内容推送到远程，用```git push```命令，实际上是把当前分支 master 推送到远程
+
+**4.3. 从远程克隆仓库**
+>使用```git clone```命令克隆
+
+>$git clone <远程仓库地址> 
 
 ### 5.分支管理
+**5.1. 创建与合并分支**
+```
+1.查看分支：$git branch
+
+2.创建分支：$git branch
+
+3.切换分支：$git checkout
+
+4.创建+切换分支：$git checkout -b
+
+5.合并某分支到当前分支：$git merge
+
+6.删除分支：$git branch -d
+```
+**5.2. 解决冲突**
+>当 Git 无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。用```git log --graph```命令可以看到分支合并图
+
+**5.3. 合并分支**
+>合并分支时，加上``` --no--ff```参数就可以用普通模式合并，合并后的历史有分支，能看出做过合并，而fast forward合并就看不出来曾经做过合并。
+
+**5.4. Bug分支**
+>修复bug时，通过创建新的bug分支进行修复再合并。当手头工作未完成时，先把现场```git stash```一下，再去修复bug， 修复后，再用```git stash pop```，回到工作现场；在master分支上修复的bug，想要合并到当前dev分支，可以用```git cherr pick< commit >```命令，避免重复劳动。
+
+**5.5. 多人协作**
+```
+要查看远程库的信息，用git remote
+
+用git remote -v显示更详细的信息
+
+```
+**5.6. 推送分支**
+```
+Git 会把该分支推送到远程库对应的远程分支上：$ git push origin master
+
+要推送其他分支，比如 dev，就改成：$ git push origin dev
+```
+**5.7. 抓取分支**
+>从远程抓取分支，使用```git pull```，有冲突则要先处理冲突。
+
+### 6.标签管理
+**6.1 创建标签**
+```
+1.打上新标签  $git tag<name> 
+
+2.查看所有标签  $git tag  
+
+3.可以指定标签信息  $git tag -a<tagname> -m"tips"  
+```
+**6.2. 操作标签**
+```
+1.删除标签  $git tag -d v0.1  
+
+2.推送某个标签到远程 $git push origin v1.0 
+
+3.一次性推送全部尚未推送到远程的本地标签 $git push origin --tags 
+
+4.远程删除 $git push origin :refs/tags/v0.1
+```
+
+#### 注：
+```
+•在 GitHub 上，可以任意 Fork 开源仓库；
+
+•自己拥有 Fork 后的仓库的读写权限；
+
+•可以推送 pull request 给官方仓库来贡献代码
+```
+
