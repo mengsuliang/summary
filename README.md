@@ -99,9 +99,9 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 >注：把本地库的内容推送到远程，用```git push```命令，实际上是把当前分支 master 推送到远程
 
 **4.3. 从远程克隆仓库**
->1.使用```git clone```命令克隆
+>使用```git clone```命令克隆
 
->2.$git clone <远程仓库地址> 
+>$git clone <远程仓库地址> 
 
 ### 5.分支管理
 **5.1. 创建与合并分支**
@@ -129,16 +129,16 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 **5.5. 多人协作**
 ```
-1.要查看远程库的信息，用git remote
+要查看远程库的信息，用git remote
 
-2.用git remote -v显示更详细的信息
+用git remote -v显示更详细的信息
 
 ```
 **5.6. 推送分支**
 ```
-Git 会把该分支推送到远程库对应的远程分支上：$ git push origin master
+1.Git 会把该分支推送到远程库对应的远程分支上：$ git push origin master
 
-要推送其他分支，比如 dev，就改成：$ git push origin dev
+2.要推送其他分支，比如 dev，就改成：$ git push origin dev
 ```
 **5.7. 抓取分支**
 >从远程抓取分支，使用```git pull```，有冲突则要先处理冲突。
