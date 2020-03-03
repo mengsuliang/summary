@@ -1,6 +1,7 @@
 ## Git学习
-@author : Meng Suliang
-@date : 03/01/2020
+>**@author : Meng Suliang**
+
+>**@date : 03/01/2020**
 ### 1.简介
 ###### Git 是目前世界上最先进的分布式版本控制系统，它为开源项目免费提供 Git存储
 ### 2.环境搭建
@@ -44,13 +45,16 @@ $ git commit -m "commit message"
 
 ### 3.版本控制
 **3.1. 仓库状态**
->以```git status```命令查看仓库的当前状态；
-如果git status告诉你有文件被修改过，以```git diff```命令查看修改内容。
+>1. 以```git status```命令查看仓库的当前状态；
+
+>2. 如果git status告诉你有文件被修改过，以```git diff```命令查看修改内容。
 
 **3.2. 版本回退**
->用```git log```命令显示最近到最远的提交日志；
-用```git reset --hard commit_id```回退到指定版本;
-用```git reflog```查看命令历史，可用于恢复老版本。
+>1.用```git log```命令显示最近到最远的提交日志；
+
+>2.用```git reset --hard commit_id```回退到指定版本;
+
+>3.用```git reflog```查看命令历史，可用于恢复老版本。
 
 **3.3. 工作区和暂存区**
 >**工作区**：电脑里能看得到的目录
@@ -68,14 +72,14 @@ $ git commit -m "commit message"
 >每次修改如果不add到暂存区，那就不会加入到commit中。
 
 **3.5. 撤销修改**
->```git checkout --file```丢弃工作区的修改；
+>1.```git checkout --file```丢弃工作区的修改；
 
->```git reset HEAD file```把暂存区的修改撤销掉。
+>2.```git reset HEAD file```把暂存区的修改撤销掉。
 
 **3.6. 删除文件**
->```rm < file >```删除文件；
+>1.```rm < file >```删除文件；
 
->```git rm < file >```从版本库中删除该文件。
+>2.```git rm < file >```从版本库中删除该文件。
 
 ### 4.远程仓库
 **4.1. 生成 SSH key**
@@ -95,9 +99,9 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 >注：把本地库的内容推送到远程，用```git push```命令，实际上是把当前分支 master 推送到远程
 
 **4.3. 从远程克隆仓库**
->使用```git clone```命令克隆
+>1.使用```git clone```命令克隆
 
->$git clone <远程仓库地址> 
+>2.$git clone <远程仓库地址> 
 
 ### 5.分支管理
 **5.1. 创建与合并分支**
@@ -125,9 +129,9 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 **5.5. 多人协作**
 ```
-要查看远程库的信息，用git remote
+1.要查看远程库的信息，用git remote
 
-用git remote -v显示更详细的信息
+2.用git remote -v显示更详细的信息
 
 ```
 **5.6. 推送分支**
