@@ -6,7 +6,7 @@
 ###### Git 是目前世界上最先进的分布式版本控制系统，它为开源项目免费提供 Git存储
 ### 2.环境搭建
 **2.1. 在Windows上装Git**
-> msysgit 是 Windows 版的 Git，从 http://msysgit.github.io/ 下载，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明 Git 安装成功。
+> msysgit 是 Windows 版的 Git，点击 [此链接](http://msysgit.github.io/ )进行下载，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明 Git 安装成功。
 
 ```
 安装完成后，还需要最后一步设置，在命令行输入：
